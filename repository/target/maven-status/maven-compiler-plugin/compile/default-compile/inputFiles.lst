@@ -1,0 +1,15 @@
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/dao/AbstractDao.java
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/dao/CustomerDao.java
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/entity/Car.java
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/entity/Admin.java
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/entity/Customer.java
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/dao/CarDao.java
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/entity/Engine.java
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/dao/AdminDao.java
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/App.java
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/dao/WheelDao.java
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/util/HibernateUtil.java
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/dao/CarDaoImpl.java
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/dao/GenericDao.java
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/entity/Wheel.java
+/Users/alenaberezka/IdeaProjects/Car-dealership/repository/src/main/java/by/car/dealership/dao/EngineDao.java
