@@ -1,4 +1,6 @@
 package by.car.dealership.dao;
 
-public class CustomerDao {
+import by.car.dealership.entity.Customer;
+
+public interface CustomerDao extends GenericDao<Customer>{
 }

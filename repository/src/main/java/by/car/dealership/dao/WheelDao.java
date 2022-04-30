@@ -1,4 +1,6 @@
 package by.car.dealership.dao;
 
-public class WheelDao {
+import by.car.dealership.entity.Wheel;
+
+public interface WheelDao extends GenericDao<Wheel>{
 }

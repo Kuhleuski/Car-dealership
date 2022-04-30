@@ -4,12 +4,13 @@ import by.car.dealership.util.HibernateUtil;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.EntityManager;
+import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.List;
 
 
 @RequiredArgsConstructor
-public abstract class AbstractDao<T> implements GenericDao<T> {
+public abstract class AbstractDao<T> implements GenericDao<T>, Serializable {
 
     private final Class<T> clazz;
     private final EntityManager entityManager;
