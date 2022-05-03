@@ -5,6 +5,8 @@ import by.car.dealership.entity.Car;
 import by.car.dealership.entity.Engine;
 import by.car.dealership.entity.Wheel;
 
+import java.math.BigDecimal;
+
 public class AdminService {
 
     private final GenericDao<Wheel> wheelDao = new WheelDaoImpl();
@@ -17,7 +19,7 @@ public class AdminService {
                 .name(name)
                 .model(model)
                 .size(size)
-                .price(price)
+                .price(BigDecimal.valueOf(price))
                 .build();
 
     }

@@ -28,7 +28,8 @@ public abstract class AbstractDao<T> implements GenericDao<T>, Serializable {
     @Override
     @SuppressWarnings("unchecked")
     public List<T> findAll() {
-        return entityManager.createQuery("from " + clazz.getName()).getResultList();
+       return entityManager.createQuery("from " + clazz.getName()).getResultList();
+
     }
 
     @Override
