@@ -5,6 +5,7 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -17,6 +18,7 @@ import java.util.Set;
 @Builder
 @Entity
 @Table(name = "engine")
+
 public class Engine implements Serializable {
 
     @Id
@@ -31,13 +33,13 @@ public class Engine implements Serializable {
     private String model;
 
     @Column(name = "engine_fuel_tupe")
-    private String fuelType;    //потом переделать в ENUM
+    private String fuelType;
 
     @Column(name = "engine_displacement")
-    private int displacement;   // потом переделать на дабл или шорт
+    private int displacement;
 
     @Column(name = "engine_price")
-    private int price;         // потом переделать в BigDecimal
+    private BigDecimal price;
 
     @OneToMany(mappedBy = "engine", fetch = FetchType.LAZY)
     private Set<Car> cars = new HashSet<>();
@@ -55,16 +57,5 @@ public class Engine implements Serializable {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Engine engine = (Engine) o;
-        return id == engine.id && displacement == engine.displacement && price == engine.price && Objects.equals(name, engine.name) && Objects.equals(model, engine.model) && Objects.equals(fuelType, engine.fuelType);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, model, fuelType, displacement, price);
-    }
 }

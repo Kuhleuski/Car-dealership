@@ -5,8 +5,8 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.math.BigDecimal;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -32,11 +32,10 @@ public class Car implements Serializable {
     private String bodyType;
 
     @Column(name = "car_weight")
-    private int weight;        // потом переделать на дабл или флоат
+    private int weight;
 
     @Column(name = "car_price")
-    private int price;         // потом переделать в BigDecimal
-
+    private BigDecimal price;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "engine_id")
@@ -45,6 +44,20 @@ public class Car implements Serializable {
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "wheel_id")
     private Wheel wheel;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "stock_id")
+    private Stock stock;
+
+
+    public void setStock(Stock stock) {
+        stock.getCarStock().add(this);
+        this.stock = stock;
+    }
 
     @Override
     public String toString() {
@@ -58,5 +71,18 @@ public class Car implements Serializable {
                 ", engine=" + engine +
                 ", wheel=" + wheel +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return id == car.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

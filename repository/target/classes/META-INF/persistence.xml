@@ -8,6 +8,9 @@
         <class>by.car.dealership.entity.Wheel</class>
         <class>by.car.dealership.entity.Car</class>
         <class>by.car.dealership.entity.Engine</class>
+        <class>by.car.dealership.entity.Customer</class>
+        <class>by.car.dealership.entity.Deal</class>
+        <class>by.car.dealership.entity.Stock</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
