@@ -13,14 +13,20 @@ public class AdminService {
     private final GenericDao<Engine> engineDao = new EngineDaoImpl();
     private final GenericDao<Car> carDao = new CarDaoImpl();
 
-    public void createWheel(String name,String model, int size, int price){
-        // TODO тут надо написать GeneralService для поиска id колёс
-        Wheel wheel = Wheel.builder()
-                .name(name)
-                .model(model)
-                .size(size)
-                .price(BigDecimal.valueOf(price))
-                .build();
+    public void createWheel(String name,String model, int size, BigDecimal price){
+        Integer idWheel = GeneralService.getIdWheel(name,wheelDao);
+        //доделать проверку на имя и модель и размер
+        if (idWheel == null){
+            Wheel wheel = wheelDao.create(Wheel.builder().name(name)
+                    .model(model)
+                    .size(size)
+                    .price(price)
+                    .build());
+
+        } else {
+            System.out.println("Wheel already exist");
+        }
+
 
     }
 

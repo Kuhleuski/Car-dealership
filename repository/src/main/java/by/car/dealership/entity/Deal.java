@@ -25,8 +25,9 @@ public class Deal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+
     @OneToOne
-    @JoinColumn(updatable = false)
+    @JoinColumn(updatable = false,unique = true)
     private Car car;
 
     @OneToOne

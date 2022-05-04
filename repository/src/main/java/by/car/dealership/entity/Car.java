@@ -53,6 +53,12 @@ public class Car implements Serializable {
     @JoinColumn(name = "stock_id")
     private Stock stock;
 
+
+    public void setStock(Stock stock) {
+        stock.getCarStock().add(this);
+        this.stock = stock;
+    }
+
     @Override
     public String toString() {
         return "Car{" +

@@ -57,26 +57,30 @@ public class App {
         wheel.setCars(cars);
         engine.setCars(cars);
 
-
         Customer customer = Customer.builder()
                 .name("Sergey")
                 .surname("Petrov")
                 .build();
 
         customer.setCars(cars);
-        //customer.setCar(car);
 
         car.setCustomer(customer);
+        car2.setCustomer(customer);
 
         Deal deal = new Deal();
         deal.setCar(car);
         deal.setCustomer(customer);
 
+        Deal deal2 = new Deal();
+        deal2.setCar(car2);
+        deal2.setCustomer(customer);
+
+        // идея в том чтобы сложить доступные машины к продаже тут, если
+        // машину купили, она должна отсюда исчезнуть, и появиться в списке продаж
+        // но Stock - криво работает, наверное он не должен быть Entity...
         List<Car> carsOnSale = new ArrayList<>();
         carsOnSale.add(car);
         carsOnSale.add(car2);
-
-
 
         Stock stock = new Stock();
         stock.setCarStock(carsOnSale);
@@ -94,16 +98,10 @@ public class App {
         manager.persist(car2);
         manager.persist(customer);
         manager.persist(deal);
+        manager.persist(deal2);
         manager.persist(stock);
 
         manager.getTransaction().commit();
-//
-//        manager.getTransaction().begin();
-//
-// //       deal.setCar(car2);
-//
-//        manager.getTransaction().commit();
-
 
         manager.close();
         HibernateUtil.close();

@@ -25,16 +25,16 @@ public class Wheel implements Serializable {
     @Column(name = "wheel_id")
     private int id;
 
-    @Column(name = "wheel_name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "wheel_model")
+    @Column(name = "model")
     private String model;
 
-    @Column(name = "wheel_size")
+    @Column(name = "size")
     private int size;     // потом переделать на шорт или дабл , В идеале в ENUM
 
-    @Column(name = "wheel_price")
+    @Column(name = "price")
     private BigDecimal price;    // потом переделать в BigDecimal
 
     @OneToMany(mappedBy = "wheel", fetch = FetchType.LAZY)
